@@ -1,14 +1,22 @@
 <?php
 
-$container['settings'] = require __DIR__ . '/settings.php';
+
+// #######################################################
+// ################### TWIG VIEW #########################
+// #######################################################
 
 $loader = new Twig_Loader_Filesystem(__DIR__.'/../resources/views');
 $twig = new Twig_Environment($loader, array(
     'cache' => false,//'/storage/twig/cache',
 ));
 
+$twig->addGlobal("baseURL", $container['settings']['app']['basepath']);
+
 $container['view'] = $twig;
 
+// #######################################################
+// ################### DATABASE ##########################
+// #######################################################
 
 $config = $container['settings']['database'];
 
@@ -25,6 +33,7 @@ $capsule->addConnection(array_merge($config,[
 $container['db'] = $capsule;
 
 
-
-
+// #######################################################
+// ################### Return Container ##################
+// #######################################################
 return $container;
