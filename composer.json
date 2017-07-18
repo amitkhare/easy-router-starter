@@ -1,0 +1,30 @@
+{
+    "name": "amitkhare/easy-router-starter",
+    "description": "Easy Starter is a starter template for easy-router",
+    "homepage": "http://github.com/amitkhare/easy-router-starter",
+    "license": "MIT",
+    "autoload":{
+        "psr-4":{
+            "App\\":"app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Amit Kumar Khare",
+            "email": "amit@inkimagine.com"
+        }
+    ],
+
+    "minimum-stability": "dev",
+    "require": {
+        "vlucas/phpdotenv": "^2.4",
+        "amitkhare/easy-router": "dev-master",
+        "illuminate/database": "^5.4",
+        "twig/twig": "^2.4"
+    },
+    "scripts": {
+		"post-root-package-install": [
+			"php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+		]
+	}
+}
