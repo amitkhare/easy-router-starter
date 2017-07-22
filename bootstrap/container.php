@@ -10,7 +10,7 @@ $twig = new Twig_Environment($loader, array(
     'cache' => false,//'/storage/twig/cache',
 ));
 
-$twig->addGlobal("baseURL", $container['settings']['app']['basepath']);
+$twig->addGlobal("baseURL", $container['settings']['app']['baseURL']);
 
 $container['view'] = $twig;
 

@@ -3,7 +3,9 @@ return [
         'displayErrorDetails' => getenv('APP_DEBUG') === 'true',
         'app' => [
             'name' => getenv('APP_NAME'),
-            'basepath'=>getenv('APP_BASEPATH')
+            'basepath'=>getenv('APP_BASEPATH'),
+            'baseURL'=>"//".$_SERVER['HTTP_HOST'].getenv('APP_BASEPATH'),
+            
         ],
         'views' => [
             'cache' => false, // __DIR__ . '/../storage/views'
